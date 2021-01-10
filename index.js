@@ -6,11 +6,11 @@ app.get('/hello', (req, res, next) => {
 });
 
 app.all('*', (req, res, next) => {
-  return res.status(400).json({
+  return res.status(404).json({
     msg: 'not found'
   });
 });
 
 app.listen(3000, () => {
-  console.log('running docker sample');
+  process.stdout.write('running docker sample');
 });
